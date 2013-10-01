@@ -5,6 +5,8 @@ Lua Scripts for [ComputerCraft](http://www.computercraft.info)
 
 ### makeflat.lua
 
+![makeflat.lua working](http://ekenberg.github.io/computercraft-scripts/images/makeflat-working.png)
+
 Make a flat rectangular area. Will remove blocks above and in the way. Places blocks only when necessary. If started in the air, will anchor the first block from the ground below. (try and you will understand)
 
 Usage: makeflat.lua a b
