@@ -193,6 +193,14 @@ local letters = {
 			Line(5,4 , 5,1),
 			width = 5
 	},
+	W = {
+			Line(1,1 , 1,6),
+			Line(2,7 , 2,7),
+			Line(3,6 , 3,5),
+			Line(4,7 , 4,7),
+			Line(5,6 , 5,1),
+			width = 5
+	},
 	X = {
 			Line(1,1 , 1,2),
 			Line(2,3 , 4,5),
