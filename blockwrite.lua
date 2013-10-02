@@ -334,7 +334,109 @@ local letters = {
 			Line(1,1 , 1,5),
 			Line(1,7 , 1,7),
 			width = 1
-	}
+	},
+	["+"] = {
+			Line(1,4 , 3,4),
+			Line(2,5 , 2,5),
+			Line(2,3 , 2,3),
+			width = 3
+	},
+	["-"] = {
+			Line(1,4 , 3,4),
+			width = 3
+	},
+	["*"] = {
+			Line(1,3 , 3,5),
+			Line(1,5 , 1,5),
+			Line(3,3 , 3,3),
+			width = 3
+	},
+	["/"] = {
+			Line(1,6 , 4,3),
+			width = 4
+	},
+	["="] = {
+			Line(1,3 , 3,3),
+			Line(1,5 , 3,5),
+			width = 3
+	},
+	["_"] = {
+			Line(1,7 , 4,7),
+			width = 4
+	},
+	["."] = {
+			Line(1,7 , 1,7),
+			width = 1
+	},
+	[","] = {
+			Line(1,6 , 1,7),
+			width = 1
+	},
+	[":"] = {
+			Line(1,3 , 1,3),
+			Line(1,5 , 1,5),
+			width = 1
+	},
+	[";"] = {
+			Line(1,3 , 1,3),
+			Line(1,5 , 1,6),
+			width = 1
+	},
+	["$"] = {
+			Line(1,3 , 3,1),
+			Line(3,2 , 4,2),
+			Line(2,4 , 4,4),
+			Line(2,6 , 3,6),
+			Line(3,7 , 5,5),
+			width = 5
+	},
+	["%"] = {
+			Line(1,3 , 1,3),
+			Line(1,6 , 4,3),
+			Line(4,6 , 4,6),
+			width = 4
+	},
+	["'"] = {
+			Line(1,1 , 1,2),
+			width = 1
+	},
+	['"'] = {
+			Line(1,1 , 1,2),
+			Line(3,1 , 3,2),
+			width = 3
+	},
+	["?"] = {
+			Line(1,1 , 1,2),
+			Line(2,1 , 3,1),
+			Line(3,2 , 3,3),
+			Line(2,4 , 2,5),
+			Line(2,7 , 2,7),
+			width = 3
+	},
+	["@"] = {
+			Line(1,2 , 1,6),
+			Line(2,7 , 5,7),
+			Line(5,5 , 5,2),
+			Line(4,1 , 2,1),
+			Line(3,3 , 3,5),
+			Line(4,5 , 4,5),
+			Line(4,3 , 4,3),
+			width = 5
+	},
+	["("] = {
+			Line(3,1 , 1,3),
+			Line(1,4 , 1,5),
+			Line(2,6 , 3,7),
+			width = 3
+	},
+	[")"] = {
+			Line(1,1 , 3,3),
+			Line(3,4 , 3,5),
+			Line(2,6 , 1,7),
+			width = 3
+	},
+
+
 
 }
 
@@ -460,13 +562,13 @@ for c in thetext:gmatch(".") do
 end
 totalLength = totalLength - 1
 
-print(thetext .. " requires " .. totalLength .. " x " .. Text.letterHeight .. " blocks flat space!")
+print(thetext .. " requires " .. totalLength .. " x " .. Text.letterHeight .. " blocks space!")
 
 -- TODO: Initially level entire surface?
 
 -- Go to initial position, ie suspended one block up
-while turtle.down() do end
-if not turtle.up() then error("Cannot go up!") end
+--while turtle.down() do end
+if turtle.detectDown() then if not turtle.up() then error("Cannot go up!") end end
 
 -- Write the text
 for c in thetext:gmatch(".") do

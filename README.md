@@ -26,7 +26,7 @@ Use with a mining turtle. Fuel and fill with enough blocks to build the area.
 
 ![blockwrite.lua hello world](http://ekenberg.github.io/computercraft-scripts/images/blockwrite-hello-world.png)
 
-Write banner text with minecraft blocks. Needs a flat working area (prepare with makeflat.lua). Text height is 7 blocks.
+Write banner text with minecraft blocks. Needs a flat working area (prepare with makeflat.lua), or just let it write in the air. Text height is 7 blocks.
 
 Usage: blockwrite.lua Hello World!
 
